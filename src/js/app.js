@@ -4,26 +4,32 @@ function trafficStatus(road, n) {
     let roadArray = road.split('');
 
     //semáforos
-    let trafficLigths = [];
+    let trafficLights = [];
 
     //objeto con los tiempos de cada luz de semáforo
     let lightTrafficTime = {
         'G' : 5,
-        'O' : 0,
+        'O' : 1,
         'R' : 5
     };
 
    for (let i =0; i< roadArray.length; i++) {
     if(roadArray[i] === "G" || roadArray[i] === "O" || roadArray[i] === "R"){
+        console.log(`A -- Analizando posición ${i}, index: ${roadArray[i]}`)
         //nuevo array
-        trafficLigths.push({ 
+        trafficLights.push({ 
             position: i, 
             state: roadArray[i],
             time: lightTrafficTime[roadArray[i]]
-        }) 
+        }) ;
+        console.log(`B -- Semáforo encontrado: ${roadArray[i]} en la posición ${i}`);
+        console.log("C -- Semáforos detectados:", trafficLights);
     }
+    
    }
-  return trafficLigths;
+
+  return trafficLights;
+  
 }
 
 module.exports = trafficStatus; 
