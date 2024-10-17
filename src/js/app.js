@@ -1,5 +1,5 @@
-function startApp() {
-    return "Traffic lights";
+function app(a, b) {
+    return a + b;
 }
 
-console.log(startApp());
+module.exports = app; 
