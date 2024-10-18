@@ -1,5 +1,12 @@
-const startApp = require('../src/js/app');
+const trafficStatus = require('../src/js/app');
 
-test('suma 1 + 2 es un total de 3', () => {
-    expect(startApp(1, 2)).toBe(3); 
-  });
+test('check de estado semáforos', () => {
+    const road = "CCC.G.G.R...";
+    const resultado = trafficStatus(road, 5);
+    expect(resultado).toEqual([
+    { position: 4, state: 'G', time: 5 },
+    { position: 6, state: 'G', time: 5 },
+    { position: 8, state: 'R', time: 5 }
+    ])
+});
+
