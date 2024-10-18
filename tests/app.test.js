@@ -1,8 +1,6 @@
 const trafficStatus = require('../src/js/app');
 
-
-
-test('check de estados', () => {
+test('check de estado semáforos', () => {
     const road = "CCC.G.G.R...";
     const resultado = trafficStatus(road, 5);
     expect(resultado).toEqual([
